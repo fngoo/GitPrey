@@ -240,7 +240,7 @@ class GitPrey(object):
             post_data[item.get('name')] = item.get('value')
         post_data['login'], post_data['password'] = username, password
         login_request.post("https://github.com/session", data=post_data, headers=self.headers)
-        self.cookies = login_request.cookies
+        self.cookies = {'_octo': 'GH1.1.33096127.1550531675', 'tz': 'Asia%2FShanghai', 'ignored_unsupported_browser_notice': 'false', '_ga': 'GA1.2.1771306873.1553172403', '_device_id': 'ec45a7a7acd0969c3e56e7f3715dab06', 'user_session': 'BXS9dlwR7L_3Uhe_jRhZVrBV2o7wQedakS87sawJYoyRLtmM', '__Host-user_session_same_site': 'BXS9dlwR7L_3Uhe_jRhZVrBV2o7wQedakS87sawJYoyRLtmM', 'logged_in': 'yes', 'dotcom_user': 'fngoo', 'has_recent_activity': '1', '_gh_sess': 'eHJyeklpZjZpNnlWZTVVdEcyYml1WWtlQWNnUURNYkF1Rmo1MUlFcjhXVlZSNzVRZlNLTXpwMFNUWlBCbEloOWxkb1l6aGo3Y2JFNGkzWENENTdnTXFhYytkcEIwcm1xRzlWN3M4NGd6a1hsREF2Rmw1a1pGRFl2WnNtUkdVZ1B3bTRoSmNIcFRQbXRQT09SbG1aVkFDcFpmeFBYejhSMGdmc21LYWRuL3oyODRja0p2eU82TUtZQWJlWExGRlpkMm1tdnh0UjRJeFE3N0ZhT0l6NytKdmJFb0RNdE10b2FoT3RYU05CTGlyNGJoZ3d5d1BSaGNGR3g0NU1KWmVBNzEzaTg5ZmVia2tUYWIrUDI5TFZZMWttSUQ0MFR3SFZyODZFU0trczZQQTc0dmpQL25PNWVScVo2SGM5dVh1c1ZMUGJGc3VWWEVjcFVEOUIxclNRQVdjRHQyNmlYUHl0MFJCNFNCdlNJNTh2SUZrc0loWHp0NUZrOEJCbmxFUEQ5RVdnNWpZck1ac2dUU2JpR29NcytnbWhjajd2RmtVeXJqc0dFNXplcnZOd0lRUGJ0c2k2aFFZWjJhdmRLSHlRbFFncFpmMDFkQU9FajFpRUtNSzFwMHcrTk9ZT3VsVHVZYmJrRjhZM3NIT2pHK1k4R2xzeW5iU0FGWllHUHk2b1U1aktWOW4rZXNIRjQwNjY4YWJwMExBPT0tLVk5c2xsV1gyeXU0K2c0WDhSYnpSR1E9PQ%3D%3D--e472b24a05ffe8a77aefe094b5c48f6905df1ab3'}
         if self.cookies['logged_in'] == 'no':
             error_print('[!] Error: Login Github failed, please check account in config file.')
             exit()
